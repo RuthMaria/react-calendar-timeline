@@ -49,18 +49,6 @@ function App() {
       selectedBgColor: 'rgba(225, 166, 244, 1)',
       bgColor: 'rgba(244, 6, 177, 0.6)',
       color: 'rgba(48, 5, 39, 0.6)',
-      itemProps: {
-        onDoubleClick: () => {
-          alert('Chamado quando o usuário clica duas vezes!');
-        },
-        style: {
-          background: 'red',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '16px',
-        },
-      },
     },
     {
       id: 2,
@@ -69,7 +57,11 @@ function App() {
       start_time: moment().add(-0.5, 'hour'), // vai inicializar meia hora antes da hora atual
       end_time: moment().add(0.5, 'hour'),
       itemProps: {
+        onDoubleClick: () => {
+          alert('Chamado quando o usuário clica duas vezes!');
+        },
         style: {
+          background: 'red',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -128,9 +120,6 @@ function App() {
             borderRadius: 4,
             borderLeftWidth: itemContext.selected ? 3 : 1,
             borderRightWidth: itemContext.selected ? 3 : 1,
-          },
-          onMouseDown: () => {
-            console.log('on item click', item);
           },
         })}
       >
